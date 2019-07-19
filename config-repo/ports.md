@@ -6,3 +6,7 @@
 
 * 服务注册与发现中心[itoken-server] 8180
 
+* 链路追踪[itoken-zipkin] 8280
+
+* 路由网关[itoken-zuul] 8380
+

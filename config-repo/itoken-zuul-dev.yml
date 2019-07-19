@@ -1,5 +1,5 @@
 server:
-  port: 9999
+  port: 8380
 
 spring:
   application:
@@ -29,3 +29,12 @@ management:
       exposure:
         # 暴露所有的监控信息
         include: health,info
+
+#zuul:
+#  routes:
+#    api-a:
+#      path: /api/a/** # 说明:代表所有的/api/a/开头的所有的请求路径都进入到service-consumer这个服务当中去
+#      serviceId: service-consumer
+#    api-b:
+#      path: /api/b/** # 说明:代表所有的/api/b/开头的所有的请求路径都进入到hello-eureka-service-consumer-feign这个服务当中去
+#      serviceId: hello-eureka-service-consumer-feign
