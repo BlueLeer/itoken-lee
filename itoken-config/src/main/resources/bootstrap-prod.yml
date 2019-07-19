@@ -11,8 +11,7 @@ spring:
         git:
           uri: git@github.com:BlueLeer/itoken-lee.git
           search-paths: config-repo
-          username: 251668577@qq.com
-          password: WANGlE5588
+          force-pull: true
   zipkin:
     base-url: http://47.107.226.177:8280
   boot:
