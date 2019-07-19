@@ -1,13 +1,13 @@
 spring:
   application:
-    name: eureka-config
+    name: itoken-config
   cloud:
     config:
       # 在git上配置
       label: master # 指定分支
       server:
         git:
-          uri: git@github.com:BlueLeer/springcoud-config.git
-          search-paths: config-center
+          uri: git@github.com:BlueLeer/itoken-lee.git
+          search-paths: config-repo
           username: 251668577@qq.com
           password: WANGlE5588
