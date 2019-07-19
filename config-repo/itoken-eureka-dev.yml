@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: itoken-eureka
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+  zipkin:
+    base-url: http://localhost:8280
 
 eureka:
   client:

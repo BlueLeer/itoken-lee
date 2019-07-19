@@ -1,0 +1,16 @@
+server:
+  port: 8280
+
+spring:
+  application:
+    name: itoken-zipkin
+  zipkin:
+    base-url: http://localhost:8280
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8180/eureka/ # 注册中心地址

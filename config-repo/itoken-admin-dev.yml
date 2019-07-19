@@ -1,0 +1,26 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: itoken-admin
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8180/eureka/ # 注册中心地址
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 暴露所有的监控信息
+        include: *
+
