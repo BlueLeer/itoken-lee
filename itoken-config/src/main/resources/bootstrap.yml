@@ -11,3 +11,10 @@ spring:
           search-paths: config-repo
           username: 251668577@qq.com
           password: WANGlE5588
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/ # 注册中心地址
+
+server:
+  port: 8888

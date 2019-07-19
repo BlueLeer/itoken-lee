@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lee.itoken</groupId>
-    <artifactId>itoken-server</artifactId>
+    <artifactId>itoken-eureka</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <parent>
