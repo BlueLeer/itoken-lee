@@ -1,0 +1,24 @@
+server:
+  port: 8180
+
+spring:
+  application:
+    name: itoken-eureka
+  boot:
+    admin:
+      client:
+        url: http://47.107.226.177:9999
+        instance:
+          prefer-ip: true
+  zipkin:
+    base-url: http://47.107.226.177:8280
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 注册中心地址
+  instance:
+    hostname: 47.107.226.177
+    prefer-ip-address: true

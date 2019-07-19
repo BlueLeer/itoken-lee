@@ -1,0 +1,40 @@
+server:
+  port: 8380
+
+spring:
+  application:
+    name: itoken-zuul
+  boot:
+    admin:
+      client:
+        url: http://47.107.226.177:9999
+        instance:
+          prefer-ip: true
+  zipkin:
+    base-url: http://47.107.226.177:8280
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.107.226.177:8180/eureka/ # 注册中心地址
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 暴露所有的监控信息
+        include: health,info
+
+#zuul:
+#  routes:
+#    api-a:
+#      path: /api/a/** # 说明:代表所有的/api/a/开头的所有的请求路径都进入到service-consumer这个服务当中去
+#      serviceId: service-consumer
+#    api-b:
+#      path: /api/b/** # 说明:代表所有的/api/b/开头的所有的请求路径都进入到hello-eureka-service-consumer-feign这个服务当中去
+#      serviceId: hello-eureka-service-consumer-feign

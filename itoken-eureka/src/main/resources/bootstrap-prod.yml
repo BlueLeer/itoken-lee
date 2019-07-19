@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      uri: http://47.107.226.177:8888
+      name: itoken-eureka
+      profile: prod
