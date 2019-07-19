@@ -14,3 +14,17 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8180/eureka/ # 注册中心地址
+
+# 链路追踪相关依赖
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
