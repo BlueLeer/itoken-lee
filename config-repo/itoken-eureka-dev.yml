@@ -8,6 +8,8 @@ spring:
     admin:
       client:
         url: http://localhost:9999
+        instance:
+          prefer-ip: true
   zipkin:
     base-url: http://localhost:8280
 
