@@ -22,5 +22,4 @@ management:
     web:
       exposure:
         # 暴露所有的监控信息
-        include: *
-
+        include: health,info
