@@ -9,9 +9,11 @@ spring:
       label: master # 指定分支
       server:
         git:
-          uri: git@github.com:BlueLeer/itoken-lee.git
+          uri: https://github.com/BlueLeer/itoken-lee.git
           search-paths: config-repo
-          force-pull: true
+          username: 251668577@qq.com
+          password: WANGlE5588
+          skip-ssl-validation: true
   zipkin:
     base-url: http://localhost:8280
   boot:
