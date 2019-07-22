@@ -1,6 +1,6 @@
 # 端口分配计划
 
-* 配置中心[itoken-config] 8888
+* 配置中心[itoken-config] 8880
 
 * 服务监控[itoken-admin] 9999
 
