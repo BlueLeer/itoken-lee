@@ -10,3 +10,4 @@
 
 * 路由网关[itoken-zuul] 8380
 
+* 后台管理服务[itoken-admin-service] 8480
