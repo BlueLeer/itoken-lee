@@ -2,6 +2,11 @@ package com.lee.itoken.service.admin.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.lee.itoken.service.admin.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -13,11 +18,11 @@ import lombok.experimental.Accessors;
  *
  * @author WangLe
  * @since 2019-07-23
- * 关于Accessors注解,参考:https://blog.csdn.net/weixin_38229356/article/details/82937420
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
+@TableName("tb_sys_user")
 public class SysUser extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -25,6 +30,7 @@ public class SysUser extends BaseEntity {
     /**
      * 用户编码
      */
+    @TableId
     private String userCode;
 
     /**
@@ -130,21 +136,25 @@ public class SysUser extends BaseEntity {
     /**
      * 密保问题2
      */
+    @TableField(value = "pwd_question_2")
     private String pwdQuestion2;
 
     /**
      * 密保问题答案2
      */
+    @TableField(value = "pwd_question_answer_2")
     private String pwdQuestionAnswer2;
 
     /**
      * 密保问题3
      */
+    @TableField(value = "pwd_question_3")
     private String pwdQuestion3;
 
     /**
      * 密保问题答案3
      */
+    @TableField(value = "pwd_question_answer_3")
     private String pwdQuestionAnswer3;
 
     /**
@@ -217,105 +227,105 @@ public class SysUser extends BaseEntity {
      */
     private String corpName;
 
-    /**
-     * 扩展 String 1
-     */
-    private String extendS1;
-
-    /**
-     * 扩展 String 2
-     */
-    private String extendS2;
-
-    /**
-     * 扩展 String 3
-     */
-    private String extendS3;
-
-    /**
-     * 扩展 String 4
-     */
-    private String extendS4;
-
-    /**
-     * 扩展 String 5
-     */
-    private String extendS5;
-
-    /**
-     * 扩展 String 6
-     */
-    private String extendS6;
-
-    /**
-     * 扩展 String 7
-     */
-    private String extendS7;
-
-    /**
-     * 扩展 String 8
-     */
-    private String extendS8;
-
-    /**
-     * 扩展 Integer 1
-     */
-    private BigDecimal extendI1;
-
-    /**
-     * 扩展 Integer 2
-     */
-    private BigDecimal extendI2;
-
-    /**
-     * 扩展 Integer 3
-     */
-    private BigDecimal extendI3;
-
-    /**
-     * 扩展 Integer 4
-     */
-    private BigDecimal extendI4;
-
-    /**
-     * 扩展 Float 1
-     */
-    private BigDecimal extendF1;
-
-    /**
-     * 扩展 Float 2
-     */
-    private BigDecimal extendF2;
-
-    /**
-     * 扩展 Float 3
-     */
-    private BigDecimal extendF3;
-
-    /**
-     * 扩展 Float 4
-     */
-    private BigDecimal extendF4;
-
-    /**
-     * 扩展 Date 1
-     */
-    private LocalDateTime extendD1;
-
-    /**
-     * 扩展 Date 2
-     */
-    private LocalDateTime extendD2;
-
-    /**
-     * 扩展 Date 3
-     */
-    private LocalDateTime extendD3;
-
-    /**
-     * 扩展 Date 4
-     */
-    private LocalDateTime extendD4;
+//    /**
+//     * 扩展 String 1
+//     */
+//    private String extendS1;
+//
+//    /**
+//     * 扩展 String 2
+//     */
+//    private String extendS2;
+//
+//    /**
+//     * 扩展 String 3
+//     */
+//    private String extendS3;
+//
+//    /**
+//     * 扩展 String 4
+//     */
+//    private String extendS4;
+//
+//    /**
+//     * 扩展 String 5
+//     */
+//    private String extendS5;
+//
+//    /**
+//     * 扩展 String 6
+//     */
+//    private String extendS6;
+//
+//    /**
+//     * 扩展 String 7
+//     */
+//    private String extendS7;
+//
+//    /**
+//     * 扩展 String 8
+//     */
+//    private String extendS8;
+//
+//    /**
+//     * 扩展 Integer 1
+//     */
+//    private BigDecimal extendI1;
+//
+//    /**
+//     * 扩展 Integer 2
+//     */
+//    private BigDecimal extendI2;
+//
+//    /**
+//     * 扩展 Integer 3
+//     */
+//    private BigDecimal extendI3;
+//
+//    /**
+//     * 扩展 Integer 4
+//     */
+//    private BigDecimal extendI4;
+//
+//    /**
+//     * 扩展 Float 1
+//     */
+//    private BigDecimal extendF1;
+//
+//    /**
+//     * 扩展 Float 2
+//     */
+//    private BigDecimal extendF2;
+//
+//    /**
+//     * 扩展 Float 3
+//     */
+//    private BigDecimal extendF3;
+//
+//    /**
+//     * 扩展 Float 4
+//     */
+//    private BigDecimal extendF4;
+//
+//    /**
+//     * 扩展 Date 1
+//     */
+//    private LocalDateTime extendD1;
+//
+//    /**
+//     * 扩展 Date 2
+//     */
+//    private LocalDateTime extendD2;
+//
+//    /**
+//     * 扩展 Date 3
+//     */
+//    private LocalDateTime extendD3;
+//
+//    /**
+//     * 扩展 Date 4
+//     */
+//    private LocalDateTime extendD4;
 
 
 }

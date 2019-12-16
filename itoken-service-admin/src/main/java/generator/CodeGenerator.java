@@ -49,23 +49,24 @@ public class CodeGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("WangLe");
         gc.setOpen(false);
-        // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://47.107.226.177:3306/itoken_service_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false");
-        // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
         mpg.setDataSource(dsc);
 
-        // 包配置
-        PackageConfig pc = new PackageConfig();
-//        pc.setModuleName(scanner("user"));
-        pc.setParent("com.lee.itoken.service.admin");
-        mpg.setPackageInfo(pc);
+        // 包名配置
+        PackageConfig packageConfig = new PackageConfig();
+        packageConfig.setParent("com.lee.itoken.service.admin");
+        packageConfig.setEntity("entity");
+        packageConfig.setController("controller");
+        packageConfig.setService("service");
+        packageConfig.setMapper("mapper");
+        mpg.setPackageInfo(packageConfig);
 
         // 自定义配置
         InjectionConfig cfg = new InjectionConfig() {
@@ -74,12 +75,8 @@ public class CodeGenerator {
                 // to do nothing
             }
         };
-
         // 如果模板引擎是 freemarker
         String templatePath = "/templates/mapper.xml.ftl";
-        // 如果模板引擎是 velocity
-        // String templatePath = "/templates/mapper.xml.vm";
-
         // 自定义输出配置
         List<FileOutConfig> focList = new ArrayList<>();
         // 自定义配置会被优先输出
@@ -87,7 +84,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "/src/main/resources/mapper/"
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -106,21 +103,14 @@ public class CodeGenerator {
         templateConfig.setXml(null);
         mpg.setTemplate(templateConfig);
 
-        // 策略配置
-        StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.underline_to_camel);
-        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
-        strategy.setEntityLombokModel(true);
-        strategy.setRestControllerStyle(true);
-        // 公共父类
-        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
-        // 写于父类中的公共字段
-        strategy.setSuperEntityColumns("id");
-        strategy.setInclude("tb_sys_user");
-        strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix("Tb_");
-        mpg.setStrategy(strategy);
+        // 表配置
+        StrategyConfig strategyConfig = new StrategyConfig();
+        strategyConfig.setNaming(NamingStrategy.underline_to_camel);
+        strategyConfig.setTablePrefix("Tb_");
+        strategyConfig.setSuperEntityClass("com.lee.itoken.service.admin.entity.BaseEntity");
+        strategyConfig.setEntityLombokModel(true);
+        strategyConfig.setRestControllerStyle(true);
+        mpg.setStrategy(strategyConfig);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
     }

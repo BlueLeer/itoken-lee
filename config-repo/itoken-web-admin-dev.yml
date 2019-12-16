@@ -1,25 +1,18 @@
 server:
-  port: 8888
+  port: 8580
+
 spring:
   application:
-    name: itoken-config
-  cloud:
-    config:
-      # 在git上配置
-      label: master # 指定分支
-      server:
-        git:
-          uri: https://github.com/BlueLeer/itoken-lee.git
-          search-paths: config-repo
-          username: 251668577@qq.com
-          password: WANGlE5588
-          skip-ssl-validation: true
-  zipkin:
-    base-url: http://localhost:8280
+    name: itoken-web-admin
   boot:
     admin:
       client:
         url: http://localhost:9999
+        instance:
+          prefer-ip: true
+  zipkin:
+    base-url: http://localhost:8280
+
 eureka:
   client:
     service-url:

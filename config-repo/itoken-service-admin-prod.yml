@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: itoken-admin-service
+    name: itoken-service-admin
   boot:
     admin:
       client:

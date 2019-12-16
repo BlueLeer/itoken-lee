@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -22,7 +21,7 @@ public class SysUserServiceTest {
 
     @Test
     public void test() {
-        SysUser sysUser = new SysUser();
-        iSysUserService.save(sysUser);
+        SysUser byId = iSysUserService.getById(242342);
+        System.out.println(byId);
     }
 }
