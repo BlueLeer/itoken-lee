@@ -8,6 +8,7 @@
     <artifactId>itoken-dependencies</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <description>该模块的目的是统一的依赖管理,定义spring cloud版本和spring boot版本,还有其他jar包的版本</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -107,7 +108,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--配置自动化部署地址-->
+    <!--配置自动化部署地址,配合gitlab可以完成持续集成,持续交付,持续部署-->
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
@@ -121,33 +122,34 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <!--配置代理仓库-->
+    <!--配置代理仓库,该代理仓库主要用于拉取jar包,例如spring cloud,spring boot等jar包的下载-->
     <repositories>
         <repository>
-            <id>nexus</id>
-            <name>Nexus Repository</name>
-            <url>http://47.107.226.177:8081/repository/maven-public/</url>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
             <releases>
-                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </releases>
         </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>nexus</id>
-            <name>Nexus Plugin Repository</name>
-            <url>http://47.107.226.177:8081/repository/maven-public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>nexus</id>-->
+<!--            <name>Nexus Plugin Repository</name>-->
+<!--            <url>http://47.107.226.177:8081/repository/maven-public/</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
     <build>
         <plugins>
             <plugin>
