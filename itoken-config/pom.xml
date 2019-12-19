@@ -66,6 +66,22 @@
         </dependency>
     </dependencies>
 
+    <!--配置自己的私服,目的是为了能够找到itoken-dependencies-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>nexus</id>-->
+<!--            <name>Nexus Repository</name>-->
+<!--            <url>http://122.51.109.246:8081/repository/maven-public/</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+
     <build>
         <plugins>
             <plugin>
