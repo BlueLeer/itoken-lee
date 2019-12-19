@@ -4,9 +4,10 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import rx.annotations.Beta;
 
 /**
- * @author WangLe
+ * @author lee
  * @date 2019/7/23 11:16
  * @description
  */

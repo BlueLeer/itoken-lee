@@ -1,7 +1,7 @@
 package com.lee.itoken.common.web.model;
 
 /**
- * @author WangLe
+ * @author lee
  * @date 2019/7/24 9:23
  * @description
  */

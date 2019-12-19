@@ -10,9 +10,9 @@ spring:
       server:
         git:
           uri:
-          search-paths: config-repo
-          username: 251668577@qq.com
-          password: WANGlE5588
+          search-paths:
+          username:
+          password:
           skip-ssl-validation: true
   zipkin:
     base-url: http://47.107.226.177:8280
