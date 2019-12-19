@@ -1,9 +1,9 @@
 server:
-  port: 8180
+  port: 8181
 
 spring:
   application:
-    name: itoken-eureka
+    name: itoken-eureka2
   boot:
     admin:
       client:
