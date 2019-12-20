@@ -18,7 +18,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.8180}/eureka/,http://${eureka.instance.hostname}:${server.8181}/eureka/,http://${eureka.instance.hostname}:${server.8182}/eureka/ # 注册中心地址
+      defaultZone: http://${eureka.instance.hostname}:8180/eureka/,http://${eureka.instance.hostname}:8181/eureka/,http://${eureka.instance.hostname}:8182/eureka/ # 注册中心地址
   instance:
     hostname: 47.99.37.67
     prefer-ip-address: true
