@@ -1,0 +1,38 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: itoken-config
+  cloud:
+    config:
+      # 在git上配置
+      label: master # 指定分支
+      server:
+        git:
+          uri: https://github.com/BlueLeer/itoken-lee.git
+          search-paths: config-repo
+          username: 251668577@qq.com
+          password: HappyKing_0108
+          skip-ssl-validation: true
+  zipkin:
+    base-url: http://localhost:8280
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8180/eureka/ # 注册中心地址
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 暴露所有的监控信息
+        include: health,info

@@ -16,6 +16,17 @@
         <version>2.0.2.RELEASE</version>
     </parent>
 
+    <modules>
+        <module>../itoken-config</module>
+        <module>../itoken-eureka</module>
+        <module>../itoken-admin</module>
+        <module>../itoken-common-web</module>
+        <module>../itoken-service-admin</module>
+        <module>../itoken-web-admin</module>
+        <module>../itoken-zipkin</module>
+        <module>../itoken-zuul</module>
+    </modules>
+
     <properties>
         <!-- Environment Settings -->
         <java.version>1.8</java.version>
@@ -138,13 +149,17 @@
             </releases>
         </repository>
     </repositories>
+
+
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>
