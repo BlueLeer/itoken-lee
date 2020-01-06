@@ -5,17 +5,17 @@ spring:
   application:
     name: itoken-zipkin
   zipkin:
-    base-url: http://47.99.37.67:8280
+    base-url: http://122.51.109.246:8280
   boot:
     admin:
       client:
-        url: http://47.99.37.67:9999
+        url: http://122.51.109.246:9999
         instance:
           prefer-ip: true
 eureka:
   client:
     service-url:
-      defaultZone: http://47.99.37.67:8180/eureka/,http://47.99.37.67:8181/eureka/,http://47.99.37.67:8182/eureka/ # 注册中心地址
+      defaultZone: http://122.51.109.246:8180/eureka/,http://122.51.109.246:8181/eureka/,http://122.51.109.246:8182/eureka/ # 注册中心地址
   instance:
     prefer-ip-address: true
 
