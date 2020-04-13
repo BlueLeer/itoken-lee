@@ -13,7 +13,7 @@ spring:
     base-url: http://localhost:8280
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://47.99.37.67:3307/itoken-service-admin?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://182.92.115.106:3307/itoken-service-admin?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password:
     initial-size: 1

@@ -20,11 +20,13 @@
         <module>../itoken-config</module>
         <module>../itoken-eureka</module>
         <module>../itoken-admin</module>
-        <module>../itoken-common-web</module>
+        <module>../itoken-web-common</module>
         <module>../itoken-service-admin</module>
         <module>../itoken-web-admin</module>
         <module>../itoken-zipkin</module>
         <module>../itoken-zuul</module>
+        <module>../itoken-service-common</module>
+        <module>../itoken-web-common</module>
     </modules>
 
     <properties>

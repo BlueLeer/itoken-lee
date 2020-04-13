@@ -7,16 +7,16 @@ spring:
   boot:
     admin:
       client:
-        url: http://47.99.37.67:9999
+        url: http://182.92.115.106:9999
         instance:
           prefer-ip: true
   zipkin:
-    base-url: http://47.99.37.67:8280
+    base-url: http://182.92.115.106:8280
 
 eureka:
   client:
     service-url:
-      defaultZone: http://47.99.37.67:8180/eureka/,http://47.99.37.67:8181/eureka/,http://47.99.37.67:8182/eureka/ # 注册中心地址
+      defaultZone: http://182.92.115.106:8180/eureka/,http://182.92.115.106:8181/eureka/,http://182.92.115.106:8182/eureka/ # 注册中心地址
   instance:
     prefer-ip-address: true
 
