@@ -1,19 +1,13 @@
 package com.lee.itoken.service.admin.service;
 
+import com.lee.itoken.common.dto.BaseResult;
 import com.lee.itoken.service.admin.ServiceAdminApplication;
 import com.lee.itoken.service.admin.entity.SysUser;
-import org.apache.tomcat.util.security.MD5Encoder;
-import org.bouncycastle.crypto.digests.MD5Digest;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Profile;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -32,7 +26,7 @@ import java.util.UUID;
 //@Rollback
 public class SysUserServiceTest {
     @Autowired
-    private ISysUserService iSysUserService;
+    private SysUserService sysUserService;
 
     /**
      * 注册测试
@@ -53,8 +47,8 @@ public class SysUserServiceTest {
         user.setUpdateDate(LocalDateTime.now());
         user.setCorpCode("001");
         user.setCorpName("lee测试");
-        boolean register = iSysUserService.register(user);
-        Assert.assertTrue(register);
+        BaseResult register = sysUserService.register(user);
+        System.out.println(register);
 
     }
 
@@ -63,8 +57,8 @@ public class SysUserServiceTest {
      */
     @Test
     public void testLogin() {
-        SysUser login = iSysUserService.login("251668577@qq.com", "123456");
-        Assert.assertNotNull(login);
+        BaseResult login = sysUserService.login("251668577@qq.com", "123456");
+        System.out.println(login);
     }
 
 

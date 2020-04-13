@@ -15,15 +15,15 @@ spring:
           password: HappyKing_0108
           skip-ssl-validation: true
   zipkin:
-    base-url: http://47.107.226.177:8280
+    base-url: http://182.92.115.106:8280
   boot:
     admin:
       client:
-        url: http://47.107.226.177:9999
+        url: http://182.92.115.106:9999
 eureka:
   client:
     service-url:
-      defaultZone: http://47.107.226.177:8180/eureka/ # 注册中心地址
+      defaultZone: http://182.92.115.106:8180/eureka/ # 注册中心地址
   instance:
     prefer-ip-address: true
 

@@ -47,13 +47,13 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir")+"/itoken-service-admin";
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("WangLe");
+        gc.setAuthor("Lee");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.99.37.67:3306/itoken_service_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://122.51.109.246:3306/itoken-service-admin?useUnicode=true&characterEncoding=utf-8&useSSL=false");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
@@ -107,7 +107,7 @@ public class CodeGenerator {
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setTablePrefix("Tb_");
-        strategyConfig.setSuperEntityClass("com.lee.itoken.service.admin.entity.BaseEntity");
+        strategyConfig.setSuperEntityClass("com.lee.itoken.common.domain.BaseEntity");
         strategyConfig.setEntityLombokModel(true);
         strategyConfig.setRestControllerStyle(true);
         mpg.setStrategy(strategyConfig);
