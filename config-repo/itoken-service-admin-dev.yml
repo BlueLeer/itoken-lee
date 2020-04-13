@@ -15,7 +15,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://182.92.115.106:3306/itoken-service-admin?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password:
+    password: 123456
     initial-size: 1
     min-idle: 1
     max-active: 20
